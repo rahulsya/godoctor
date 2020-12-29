@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { fonts } from '../../../utils'
 import { colors } from '../../../utils/colors'
 import { Button, Gap } from '../../atoms'
 
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor:colors.white,
     },
     text:{
-        fontFamily:'Nunito-SemiBold',
+        fontFamily: fonts.primary[600],
         fontSize:20,
         color:colors.text.default,
         flex:1,

@@ -2,6 +2,7 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import {ILGetStarted, ILLogo } from '../../assets'
 import { Button, Gap } from '../../components'
+import { fonts } from '../../utils'
 
 
 export default function GetStarted({navigation}) {
@@ -32,6 +33,6 @@ const styles = StyleSheet.create({
         marginTop:91,
         fontSize:28,
         fontWeight:'600',
-        fontFamily:'Nunito-SemiBold'
+        fontFamily: fonts.primary[600]
     }
 })

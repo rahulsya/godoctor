@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ILLogo } from '../../assets'
 import {Button, Gap, Input,Link} from '../../components/atoms'
+import { fonts } from '../../utils'
 
 export default function Login() {
     return (
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
     },
     title:{
-        fontFamily:'Nonito-SemiBold',
+        fontFamily:fonts.primary[600],
         fontSize:20,
         maxWidth:153,
         color:'#112340',
