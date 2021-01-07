@@ -1,14 +1,29 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { ILOne } from '../../../assets'
+import { ILFour, ILOne, ILThree, ILTwo } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-export default function DoctorCategory() {
+export default function DoctorCategory({category}) {
+    const Icon=()=>{
+        if (category==="dokter umum") {
+            return <ILOne style={styles.illustration}/>
+        }
+        if (category==='psikiater') {
+            return <ILTwo style={styles.illustration}/>
+        }
+        if (category==='dokter obat') {
+            return <ILThree style={styles.illustration}/>
+        }
+        if (category==='dokter anak') {
+            return <ILFour style={styles.illustration}/>
+        }
+        return <ILOne style={styles.illustration}/>
+    }
     return (
         <View style={styles.page}>
-            <ILOne style={styles.illustration}/>
+            <Icon/>
             <Text style={styles.label}>Saya Butuh</Text>
-            <Text style={styles.category}>dokter umum</Text>
+            <Text style={styles.category}>{category}</Text>
         </View>
     )
 }

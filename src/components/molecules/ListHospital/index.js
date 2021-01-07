@@ -1,16 +1,15 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Hospital } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-export default function ListHospital() {
+export default function ListHospital({type,name,address,pic}) {
     return (
         <View style={styles.container}>
-            <Image source={Hospital} style={styles.image}/>
+            <Image source={pic} style={styles.image}/>
             <View style={styles.content}>
-                <Text style={styles.title}>Rumah Sakit </Text>
-                <Text style={styles.title}>Citra Bunga Medeka</Text>
-                <Text style={styles.desc}>Jln. Surya Sejahtera 20</Text>
+                <Text style={styles.title}>{type}</Text>
+                <Text style={styles.title}>{name}</Text>
+                <Text style={styles.desc}>{address}</Text>
             </View>
         </View>
     )
@@ -20,7 +19,7 @@ const styles = StyleSheet.create({
     container:{
         flexDirection:'row',
         borderColor:colors.borderColor,
-        borderWidth:1,
+        borderBottomWidth:1,
         padding:16
     },
     image:{

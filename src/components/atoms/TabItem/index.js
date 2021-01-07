@@ -28,11 +28,11 @@ export default function TabItem({title,active,onPress,onLongPress}) {
 
 const styles = StyleSheet.create({
     container:{
-        alignItems:'center'
+        alignItems:'center',
     },
     text:active=>({
         fontSize:10,
         fontFamily:fonts.primary[600],
         color:active ? colors.text.menuActive : colors.text.menuInActive
-    })
+    }),
 })
