@@ -1,22 +1,22 @@
-import React from 'react'
-import { StyleSheet, TouchableOpacity } from 'react-native'
-import { IconBackDark } from '../../../assets'
+import React from 'react';
+import {StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {IconBackDark, IconBackLight} from '../../../assets';
 
-export default function IconOnly({onPress,icon}) {
-    const Icon=()=>{
-        if (icon==='back-dark') {
-            return <IconBackDark/>
-        }
-        if (Icon==="back-light") {
-            return <IconBackDark/>
-        }
-        return <IconBackDark/>
+export default function IconOnly({onPress, icon}) {
+  const Icon = () => {
+    if (icon === 'back-dark') {
+      return <IconBackDark />;
     }
-    return (
-        <TouchableOpacity onPress={onPress}>
-            <Icon/>
-        </TouchableOpacity>
-    )
+    if (icon === 'back-light') {
+      return <IconBackLight />;
+    }
+    return <IconBackDark />;
+  };
+  return (
+    <TouchableOpacity onPress={onPress}>
+      <Icon />
+    </TouchableOpacity>
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
