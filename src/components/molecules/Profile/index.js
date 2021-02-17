@@ -4,12 +4,12 @@ import {color} from 'react-native-reanimated';
 import {ICBtnRemove, User} from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function Profile({name, desc}) {
+export default function Profile({name, desc, isRemove, photo}) {
   return (
     <View style={styles.container}>
       <View style={styles.borderAvatar}>
-        <Image source={User} style={styles.avatar} />
-        <ICBtnRemove style={styles.icon} />
+        <Image source={photo} style={styles.avatar} />
+        {isRemove && <ICBtnRemove style={styles.icon} />}
       </View>
       {name && (
         <View>

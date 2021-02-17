@@ -5,9 +5,9 @@ import {Button, Gap, Header, Input, Profile} from '../../components';
 export default function UpdateProfile({navigation}) {
   return (
     <View style={styles.page}>
-      <Header title="Update Profile" />
+      <Header title="Update Profile" onPress={() => navigation.goBack()} />
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Profile />
+        <Profile isRemove />
         <Gap height={26} />
         <View style={styles.content}>
           <Input label="Full Name" />

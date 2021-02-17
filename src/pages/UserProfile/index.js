@@ -1,13 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View} from 'react-native';
+import {ILNullPhoto} from '../../assets';
 import {Header, List, Profile, Gap} from '../../components';
+import {getData} from '../../utils';
 
 export default function UserProfile({navigation}) {
+  const [profile, setProfile] = useState({
+    fullName: '',
+    profession: '',
+    photo: ILNullPhoto,
+  });
+  React.useEffect(() => {
+    getData('user').then((res) => {
+      const data = res;
+      data.photo = {uri: res.photo};
+      setProfile(res);
+    });
+  }, []);
+
   return (
     <View style={styles.page}>
       <Header title="Profile" onPress={() => navigation.goBack()} />
       <Gap height={14} />
-      <Profile name="Shayna Melinda" desc="Product Designer" />
+      {profile.fullName.length > 0 && (
+        <Profile
+          name={profile.fullName}
+          desc={profile.profession}
+          photo={profile.photo}
+        />
+      )}
 
       <Gap height={10} />
       <List
